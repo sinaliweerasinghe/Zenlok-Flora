@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenlok Flora</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+     <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet"href="CSS/Gift.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
+    <link href="http://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet" href="https://unpkhg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+
+    <header>
+        <a href="/" class="Logo"><img src="Logo.jpeg" alt=""></a>
+    
+        <ul class="navmen">
+            <li><a href="/">HOME</a></li>
+            <li class="dropdown">
+                <a href="Shop.html">SHOP NOW</a>
+                <ul class="dropdown-content">
+                    <li class="subdropdown">
+                        <a href="Indoor.html">Indoor Plants</a>
+                        <ul class="subdropdown-content">
+                            <li><a href="Table.html">Table Plants</a></li>
+                            <li><a href="Wall.html">Wall Hanging Plants</a></li>
+                        </ul>
+                    </li>
+                    <li class="subdropdown">
+                        <a href="Home.html">Home Plants</a>
+                        <ul class="subdropdown-content">
+                            <li><a href="Pot.html">Potted Plants</a></li>
+                            <li><a href="Modern.html">Modern Plants</a></li>
+                        </ul>
+                    </li>
+                    <li class="subdropdown">
+                        <a href="Flower.html">Flowers</a>
+                        <ul class="subdropdown-content">
+                            <li><a href="Cactus.html">Cactus</a></li>
+                            <li><a href="Anthuriam.html">Anthurium</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Vase.html">Vases</a></li>
+                    <li><a href="Fertilizer.html">Fertilizers</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="Gift.html">GIFTS</a>
+                <ul class="dropdown-content">
+                    <li><a href="Pgift.html">Personalized Gifts</a></li>
+                    <li><a href="Voucher.html">Gift Vouchers</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="Contact.html">CONTACT</a></li>
+        </ul>
+    
+        <div class="nav-icon">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <a href="#" class="search-icon"><i class='bx bx-search'></i></a>
+            </div>
+            <a href="Login.html"><i class='bx bx-user'></i></a>
+            <a href="Cart.html"><i class='bx bx-cart'></i></a>
+            <a href="Ordertrack.html"><i class='bx bx-package'></i></a>
+
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <section class="page">
+        <div class="pagehead">
+            <a href="/">HOME</a> / <a href="/gift">GIFTS</a> / <a href="/personalized-gifts">PERSONALIZED GIFTS</a>
+        </div>
+    </section>
+
+    <section class="personalized-gifts">
+        <h1>Create Your Personalized Gift Box</h1>
+
+        <!-- Step 1: Choose a Gift Box Type -->
+        <div class="step">
+            <h2>Step 1: Select a Gift Box Type</h2>
+            <div class="box-options">
+                <div class="box-option" onclick="selectBox('small')">
+                    <img src="image/Pgifts/small.jpg" alt="Small Gift Box">
+                    <h3>Small Gift Box</h3>
+                    <p>Perfect for a single item or small gifts.</p>
+                </div>
+                <div class="box-option" onclick="selectBox('medium')">
+                    <img src="image/Pgifts/medium.jpg" alt="Medium Gift Box">
+                    <h3>Medium Gift Box</h3>
+                    <p>Great for multiple items or medium-sized gifts.</p>
+                </div>
+                <div class="box-option" onclick="selectBox('large')">
+                    <img src="image/Pgifts/large.jpg" alt="Large Gift Box">
+                    <h3>Large Gift Box</h3>
+                    <p>Ideal for large or multiple items.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Select Items to Add -->
+        <div class="step">
+            <h2>Step 2: Select Items to Add</h2>
+            <div class="item-options">
+                <div class="item-option">
+                    <img src="image/Indoor Plants/Cactus/Flower Cac.jpg" alt="Rose Flower Cactus">
+                    <h3>Rose Flower Cactus<br>Premium<br>Flower Cactus</h3>
+                    <p>Rs 1,650.00</p>
+                    <button onclick="addItem('Rose Flower Cactus')">Add to Box</button>
+                </div>
+                <div class="item-option">
+                    <img src="image/Indoor Plants/Cactus/Cactus Heart.jpg" alt="Cactus Heart Plant">
+                    <h3>Cactus Heart<br>Plant</h3>
+                    <p>Rs 2,700.00</p>
+                    <button onclick="addItem('Cactus Heart Plant')">Add to Box</button>
+                </div>
+                <div class="item-option">
+                    <img src="image/Indoor Plants/Cactus/Cac.jpg" alt="Cactus Plant">
+                    <h3>Cactus Plant<br>in White<br>Pot</h3>
+                    <p>Rs 2,150.00</p>
+                    <button onclick="addItem('Cactus Plant')">Add to Box</button>
+                </div>
+                <div class="item-option">
+                    <img src="image/House Plants/Table Plants/JADE PLANT.jpg" alt="JADE PLANT">
+                    <h3>JADE PLANT<br>in Black<br>Pot</h3>
+                    <p>Rs 2,500.00</p>
+                    <button onclick="addItem('JADE PLANT')">Add to Box</button>
+                </div>
+                <div class="item-option">
+                    <img src="image/House Plants/Coffee Plant.jpg" alt="Coffee Plant">
+                    <h3>Coffee<br>Plant<br>Premium<br>Table Plant</h3>
+                    <p>Rs 2,000.00</p>
+                    <button onclick="addItem('Coffee Plant')">Add to Box</button>
+                </div>
+                <div class="item-option">
+                    <img src="image/Indoor Plants/Snake Plant.jpg" alt="Snake Plant">
+                    <h3>Snake Plant<br>in White<br>Pot</h3>
+                    <p>Rs 2,150.00</p>
+                    <button onclick="addItem('Snake Plant')">Add to Box</button>
+                </div>
+                <div class="item-option">
+                    <img src="image/Indoor Plants/Spider Plant.jpg" alt="Spider Plant">
+                    <h3>Spider Plant</h3>
+                    <p>Rs 1,850.00</p>
+                    <button onclick="addItem('Spider Plant')">Add to Box</button>
+                </div>
+                <div class="item-option">
+                    <img src="image/Indoor Plants/PARLOR PALM.jpg" alt="PARLOR PALM">
+                    <h3>PARLOR PALM<br>in White<br>Pot</h3>
+                    <p>Rs 4,000.00</p>
+                    <button onclick="addItem('PARLOR PALM')">Add to Box</button>
+                </div>
+                <div class="item-option">
+                    <img src="image/House Plants/CHINESE EVERGREEN.jpg" alt="CHINESE EVERGREEN">
+                    <h3>CHINESE EVERGREEN</h3>
+                    <p>Rs 1,550.00</p>
+                    <button onclick="addItem('CHINESE EVERGREEN')">Add to Box</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Personalize the Box -->
+        <div class="step">
+            <h2>Step 3: Personalize the Box</h2>
+            <div class="personalization-options">
+                <label for="message">Add a Personalized Message:</label>
+                <textarea id="message" placeholder="Enter your message here..."></textarea>
+
+                <label for="wrapping">Choose Wrapping Paper:</label>
+                <select id="wrapping">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                </select>
+
+                <label for="card">Include a Custom Card:</label>
+                <input type="checkbox" id="card">
+            </div>
+        </div>
+
+        <!-- Step 4: Review and Confirm -->
+        <div class="step">
+            <h2>Step 4: Review Your Gift Box</h2>
+            <div class="review-summary">
+                <h3>Selected Box: <span id="selected-box"></span></h3>
+                <h3>Selected Items: <span id="selected-items"></span></h3>
+                <h3>Personalized Message: <span id="review-message"></span></h3>
+                <h3>Wrapping Paper: <span id="review-wrapping"></span></h3>
+                <h3>Custom Card: <span id="review-card"></span></h3>
+            </div>
+            <button onclick="confirmOrder()">Confirm Order</button>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="footer-container">
+            <!-- Left Section -->
+            <div class="footer-about">
+                <img src="Logo.jpeg" alt="Zenlok Flora Logo" class="footer-logo">
+                <p>Love nature but short on time? Zenlok Flora.lk is here to bridge that gap! We bring the beauty of nature to your home and office with our wide selection of indoor and outdoor plants, paired with unique pots and holders designed for any space. Plus, we deliver right to your doorstep.</p>
+                <form class="subscription-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="subscription-note">By subscribing, you agree to receive recurring automated promotional and personalized marketing emails from Zenlok Flora at the email used when subscribing.</p>
+            </div>
+    
+            <!-- Middle Sections -->
+            <div class="footer-links">
+                <h4>INFORMATION</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-links">
+                <h4>FIND IT FAST</h4>
+                <ul>
+                    <li><a href="Shop.html">Shop Now</a></li>
+                    <li><a href="Table.html">Table Plants</a></li>
+                    <li><a href="Vase.html">Vases</a></li>
+                    <li><a href="Flower.html">Flowers</a></li>
+                </ul>
+            </div>
+    
+            <!-- Right Section -->
+            <div class="footer-contact">
+                <h4>GET IN TOUCH</h4>
+                <ul>
+                    <li>508/4 Thalangama North, Baththaramulla</li>
+                    <li>Hotline: (+94) 11-2345678</li>
+                    <li>Email: <a href="mailto:zenlokflora@gmail.com">zenlokflora@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Bottom Section -->
+        <div class="footer-bottom">
+            <p>© 2025 ZENLOK FLORA. All rights reserved. Designed by Sinali Weerasinghe</p>
+        </div>
+    </section>
+
+    <script src="JS/Gift.js"></script>
+</body>
+</html>

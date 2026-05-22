@@ -1,0 +1,743 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Jost', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+
+/* Header with Nav Bar */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background: rgb(255, 253, 246);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 10%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 70px;
+}
+
+.Logo img {
+    max-width: 120px;
+    height: auto;
+}
+
+.navmen {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navmen a {
+    color: black;
+    font-size: 16px;
+    padding: 10px 20px;
+    font-weight: 400;
+    transition: all .42s ease;
+    text-decoration: none;
+}
+
+.navmen a:hover {
+    color: rgb(25, 144, 47);
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon i {
+    margin-right: 20px;
+    color: black;
+    font-size: 25px;
+    font-weight: 400;
+    transition: all .42s ease;
+}
+
+.nav-icon i:hover {
+    transform: scale(1.1);
+    color: rgb(55, 216, 85);
+}
+
+#menu-icon{
+    font-size: 35px;
+    color: black;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+
+#menu-icon.open {
+    transform: rotate(90deg);
+    transition: transform 0.42s ease;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    width: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    transition: width 0.42s ease;
+    position: absolute;
+    right: 30px;
+    background: transparent;
+    color: black;
+    font-size: 16px;
+    visibility: hidden;
+}
+
+.search-bar.active {
+    width: 200px;
+    padding: 5px 10px;
+    border-bottom: 1px solid black;
+    visibility: visible; 
+}
+
+.search-icon {
+    cursor: pointer;
+    z-index: 1;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgb(255, 253, 246);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+    top: 100%; 
+    left: 0;
+}
+
+.dropdown-content li {
+    padding: 10px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background: rgb(25, 144, 47);
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.subdropdown {
+    position: relative;
+}
+
+.subdropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%; 
+    top: 0;
+    background: rgb(255, 253, 246);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+}
+
+.subdropdown-content li {
+    padding: 10px;
+}
+
+.subdropdown-content a {
+    color: black;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.subdropdown-content a:hover {
+    background: rgb(25, 144, 47);
+    color: white;
+}
+
+.subdropdown:hover .subdropdown-content {
+    display: block;
+}
+
+@media (max-width: 1200px) {
+    header {
+        padding: 25px 5%;
+    }
+    
+    .navmen a {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navmen {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 300px;
+        height: calc(100vh - 70px);
+        background: rgb(255, 253, 246);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transition: all 0.42s ease;
+    }
+    
+    .navmen.active {
+        right: 0;
+    }
+    
+    .navmen a {
+        padding: 15px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #menu-icon {
+        display: block;
+    }
+    
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        display: none;
+    }
+    
+    .dropdown:hover .dropdown-content,
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+    
+    .subdropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+    
+    .search-bar.active {
+        width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 15px 3%;
+    }
+    
+    .Logo img {
+        max-width: 100px;
+    }
+    
+    .navmen {
+        width: 250px;
+    }
+    
+    .nav-icon i {
+        margin-right: 15px;
+        font-size: 22px;
+    }
+    
+    #menu-icon {
+        font-size: 30px;
+    }
+    
+    .search-bar.active {
+        width: 120px;
+        right: 20px;
+    }
+}
+
+/* About photo Section */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.contact-section {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 40px;
+}
+
+.contact-header {
+    margin-bottom: 20px;
+}
+
+.contact-header a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.contact-content {
+    margin-top: 20px;
+}
+
+.contact-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 30px;
+    text-decoration: underline;
+    font-style: italic;
+    color: rgb(17, 95, 12);
+    margin-top: -280px;
+}
+
+@media (max-width: 1200px) {
+    h1 {
+        margin-top: -220px;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-section {
+        padding: 40px 15px;
+    }
+    
+    h1 {
+        margin-top: -180px;
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 30px 10px;
+        margin-top: 30px;
+    }
+    
+    h1 {
+        margin-top: -120px;
+        font-size: 22px;
+    }
+    
+    .contact-header a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-section {
+        padding: 25px 10px;
+    }
+    
+    h1 {
+        margin-top: -80px;
+        font-size: 20px;
+    }
+    
+    .contact-image {
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        margin-top: -60px;
+        font-size: 18px;
+    }
+    
+    .contact-header a {
+        font-size: 13px;
+    }
+}
+
+/* About Section */
+.about-section {
+    text-align: center;
+    padding: 50px 20px;
+    margin: 40px auto;
+    margin-top: 180px;
+    max-width: 1200px;
+    background: #f2f6f2;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4e6355;
+    margin-bottom: 20px;
+}
+
+.about-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4e6355;
+    margin-top: 30px;
+}
+
+.about-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.about-section ul {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.about-section ul li {
+    font-size: 16px;
+    color: #555;
+    padding: 8px 0;
+}
+
+.about-section ul li strong {
+    color: #4e6355;
+}
+
+@media (max-width: 1200px) {
+    .about-section {
+        margin-top: 160px;
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-section {
+        margin-top: 140px;
+        padding: 40px 20px;
+    }
+    
+    .about-section h2 {
+        font-size: 22px;
+    }
+    
+    .about-section h3 {
+        font-size: 18px;
+    }
+    
+    .about-section p,
+    .about-section ul li {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        margin-top: 120px;
+        padding: 30px 15px;
+        border-radius: 8px;
+    }
+    
+    .about-section h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .about-section h3 {
+        font-size: 17px;
+        margin-top: 25px;
+    }
+    
+    .about-section p {
+        text-align: left;
+        line-height: 1.5;
+    }
+    
+    .about-section ul {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-section {
+        margin-top: 100px;
+        padding: 25px 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    .about-section h2 {
+        font-size: 18px;
+    }
+    
+    .about-section h3 {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    
+    .about-section p,
+    .about-section ul li {
+        font-size: 14px;
+    }
+    
+    .about-section ul li {
+        padding: 6px 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .about-section {
+        margin-top: 80px;
+    }
+    
+    .about-section h2 {
+        font-size: 17px;
+    }
+}
+
+/* Footer Section */
+.footer {
+    background-color: rgb(255, 253, 246);
+    padding: 50px 20px;
+}
+
+/* Footer Container */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer Logo */
+.footer-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* About Section */
+.footer-about p {
+    color: #565656;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Email Subscription */
+.subscription-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.subscription-form input {
+    padding: 12px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.subscription-form button {
+    padding: 12px 20px;
+    background-color: #2a6833;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.subscription-form button:hover {
+    background-color: #034c1a;
+}
+
+.subscription-note {
+    color: #565656;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* Footer Links */
+.footer-links h4,
+.footer-contact h4 {
+    color: #021705;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.footer-links ul,
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li,
+.footer-contact li {
+    color: #565656;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-links li:hover {
+    color: rgb(25, 144, 47);
+}
+
+/* Footer Contact Links */
+.footer-contact a {
+    text-decoration: none;
+    color: #565656;
+    transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: rgb(25, 144, 47);
+}
+
+/* Bottom Footer */
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(255, 253, 246);
+}
+
+.footer-bottom p {
+    color: #021705;
+    text-transform: capitalize;
+}
+
+@media (max-width: 992px) {
+    .footer {
+        padding: 40px 20px;
+    }
+    
+    .footer-container {
+        gap: 1.5rem;
+    }
+    
+    .subscription-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .subscription-form input {
+        width: 100%;
+    }
+    
+    .subscription-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 15px;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .footer-about {
+        grid-column: 1 / -1;
+    }
+    
+    .footer-logo {
+        width: 130px;
+    }
+    
+    .footer-about p,
+    .footer-links h4,
+    .footer-contact h4 {
+        font-size: 15px;
+    }
+    
+    .footer-links li,
+    .footer-contact li,
+    .subscription-note {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding: 25px 10px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .footer-logo {
+        width: 120px;
+    }
+    
+    .footer-bottom {
+        padding: 15px;
+    }
+    
+    .footer-bottom p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .subscription-form input,
+    .subscription-form button {
+        padding: 10px;
+    }
+    
+    .footer-links h4,
+    .footer-contact h4 {
+        margin-bottom: 10px;
+    }
+    
+    .footer-links li,
+    .footer-contact li {
+        margin-bottom: 8px;
+    }
+}

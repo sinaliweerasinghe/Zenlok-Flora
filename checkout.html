@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Zenlok Flora</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet"href="CSS/checkout.css">
+</head>
+<body>
+  <div class="checkout-container">
+    <h2>Checkout</h2>
+
+    <form id="checkout-form" method="POST" action="place_order.php">
+      <div class="form-section">
+        <h3>Billing Details</h3>
+        <label for="full_name">Full Name</label>
+        <input type="text" name="full_name" placeholder="Full Name" required />
+        <label for="phone">Phone Number</label>
+        <input type="tel" name="phone" placeholder="Phone Number" required />
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Email" required />
+        <label for="address1">Address Line 1</label>
+        <input type="text" name="address1" placeholder="Address Line 1" required />
+        <label for="address2">Address Line 2</label>
+        <input type="text" name="address2" placeholder="Address Line 2" />
+        <label for="city">City</label>
+        <input type="text" name="city" placeholder="City" required />
+        <label for="postal_code">Postal Code</label>
+        <input type="text" name="postal_code" placeholder="Postal Code" required />
+
+        <label for="country">Country</label>
+        <select name="country" required>
+          <option value="">Select Country</option>
+          <option value="Sri Lanka">Sri Lanka</option>
+          <option value="UK">United Kingdom</option>
+          <option value="USA">United States</option>
+        </select>
+
+        <h4>Payment Method</h4>
+        <label><input type="radio" name="payment_method" value="Cash on Delivery" checked /> Cash on Delivery</label>
+        <label><input type="radio" name="payment_method" value="Credit Card" /> Credit Card</label>
+      </div>
+
+      <div class="form-section order-summary">
+        <h3>Order Summary</h3>
+        <div id="order-items">
+          <!-- Order items from localStorage will be inserted by JS -->
+        </div>
+        <div class="summary-totals">
+          <p>Subtotal: Rs.<span id="subtotal">0.00</span></p>
+          <p>Delivery Fee: Rs.<span id="delivery">300.00</span></p>
+          <p class="grand-total">Grand Total: Rs.<span id="grandtotal">0.00</span></p>
+        </div>
+      </div>
+
+      <input type="hidden" name="cart-item" id="cartData">
+      <button type="submit" class="place-order-btn">Place Order</button>
+    </form>
+  </div>
+
+  <script>
+    // Get cart from localStorage and render summary
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    // Add it to the hidden input before submitting
+    document.querySelector('form').addEventListener('submit', function() {
+      document.getElementById('cartData').value = JSON.stringify(cart);
+    });
+    const orderItemsContainer = document.getElementById("order-items");
+    const subtotalElem = document.getElementById("subtotal");
+    const deliveryFee = 300;
+    const grandTotalElem = document.getElementById("grandtotal");
+
+    let subtotal = 0;
+
+    cart.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      subtotal += itemTotal;
+      const div = document.createElement("div");
+      div.className = "order-item";
+      div.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" />
+        <div>
+          <p><strong>${item.name}</strong></p>
+          <p>Qty: ${item.quantity}</p>
+          <p>Rs.${itemTotal.toFixed(2)}</p>
+          <input type="hidden" name="items[]" value="${item.name} x ${item.quantity} (Rs.${itemTotal.toFixed(2)})" />
+        </div>
+      `;
+      orderItemsContainer.appendChild(div);
+    });
+
+    subtotalElem.textContent = subtotal.toFixed(2);
+    grandTotalElem.textContent = (subtotal + deliveryFee).toFixed(2);
+  </script>
+</body>
+</html>

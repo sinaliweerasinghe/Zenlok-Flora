@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Store Admin - Logout</title>
+    <style>
+        :root {
+            --primary-color: #4a6f28; /* Plant green */
+            --secondary-color: #f5f5f5;
+            --text-color: #333;
+            --light-text: #777;
+            --border-color: #e0e0e0;
+            --hover-color: #3a5a1a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+        }
+        
+        .admin-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+        }
+        
+        .logo {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+        
+        .logo h2 {
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-bottom: 5px;
+        }
+        
+        .nav-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .nav-menu a i {
+            margin-right: 10px;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logout-container {
+            text-align: center;
+            max-width: 500px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logout-icon {
+            font-size: 48px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .logout-message {
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background-color: var(--hover-color);
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+            margin-left: 10px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>Plant Store Admin</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="admindashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="adminaddproducts.html"><i class="fas fa-plus-circle"></i>Add Products</a></li>
+                <li><a href="adminproducts.html"><i class="fas fa-shopping-bag"></i> View Products</a></li>
+                <li><a href="admincustomers.html"><i class="fas fa-users"></i> Customers</a></li>
+                <li><a href="adminorders.html"><i class="fas fa-receipt"></i> Orders</a></li>
+                <li><a href="adminsettings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="adminlogout.php" id="logoutLink" class="active"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="logout-container">
+                <div class="logout-icon">
+                    <i class="fas fa-sign-out-alt"></i>
+                </div>
+                <h2>Logout from Admin Panel</h2>
+                <div class="logout-message">
+                    <p>Are you sure you want to log out from the Plant Store Admin Panel?</p>
+                </div>
+                <div>
+                    <form action="adminlogout.php" method="post" style="display:inline;">
+                        <button type="submit" class="btn">Yes, Logout</button>
+                    </form>
+                    <!-- <button id="confirmLogout" class="btn">Yes, Logout</button> -->
+                    <!-- <a href="admindashboard.html" class="btn btn-secondary">Cancel</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

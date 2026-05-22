@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenlok Flora</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+     <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet"href="CSS/login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
+    <link href="http://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+
+    <header>
+        <a href="/" class="Logo"><img src="Logo.jpeg" alt=""></a>
+    
+        <ul class="navmen">
+            <li><a href="/">HOME</a></li>
+            <li class="dropdown">
+                <a href="Shop.html">SHOP NOW</a>
+                <ul class="dropdown-content">
+                    <li class="subdropdown">
+                        <a href="Indoor.html">Indoor Plants</a>
+                        <ul class="subdropdown-content">
+                            <li><a href="Table.html">Table Plants</a></li>
+                            <li><a href="Wall.html">Wall Hanging Plants</a></li>
+                        </ul>
+                    </li>
+                    <li class="subdropdown">
+                        <a href="Home.html">Home Plants</a>
+                        <ul class="subdropdown-content">
+                            <li><a href="Pot.html">Potted Plants</a></li>
+                            <li><a href="Modern.html">Modern Plants</a></li>
+                        </ul>
+                    </li>
+                    <li class="subdropdown">
+                        <a href="Flower.html">Flowers</a>
+                        <ul class="subdropdown-content">
+                            <li><a href="Cactus.html">Cactus</a></li>
+                            <li><a href="Anthuriam.html">Anthurium</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Vase.html">Vases</a></li>
+                    <li><a href="Fertilizer.html">Fertilizers</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="Gift.html">GIFTS</a>
+                <ul class="dropdown-content">
+                    <li><a href="Pgift.html">Personalized Gifts</a></li>
+                    <li><a href="Voucher.html">Gift Vouchers</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="Contact.html">CONTACT</a></li>
+        </ul>
+    
+        <div class="nav-icon">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <a href="#" class="search-icon"><i class='bx bx-search'></i></a>
+            </div>
+            <a href="Login.html"><i class='bx bx-user'></i></a>
+            <a href="Cart.html"><i class='bx bx-cart'></i></a>
+            <a href="Ordertrack.html"><i class='bx bx-package'></i></a>
+
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="form-container">
+            <div class="logo">
+                <img src="Logo.jpeg" alt="Logo">
+            </div>
+            <h2>Login Into Account</h2>
+            <p>Please enter your email & password to sign in.</p>
+            <form action="login.php" method="POST">
+                <label for="username">User Name</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                
+                            <div class="remember-me">
+                                             <input type="checkbox" id="remember" name="remember">
+                                <label for="remember">Remember me</label>
+                            </div>
+                            
+                <button type="submit">LOGIN</button>
+            </form>
+            <p class="register-link">
+                Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+        <div class="image-container">
+            <img src="login.jpg" alt="Login Image">
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+    
+    <script src="JS/login.js"></script>
+</body>
+</html>
+
